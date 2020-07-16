@@ -1,0 +1,840 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E11AEDE-C842-45E0-96C7-47B817BC0E6C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>projestaj</RootNamespace>
+    <AssemblyName>projestaj</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44327</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.5\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminFiles\contactform\contactform.php" />
+    <Content Include="AdminFiles\contactform\Readme.txt" />
+    <Content Include="AdminFiles\credits.txt" />
+    <Content Include="AdminFiles\css\style-responsive.css" />
+    <Content Include="AdminFiles\css\style.css" />
+    <Content Include="AdminFiles\css\table-responsive.css" />
+    <Content Include="AdminFiles\css\to-do.css" />
+    <Content Include="AdminFiles\css\zabuto_calendar.css" />
+    <Content Include="AdminFiles\img\404.png" />
+    <Content Include="AdminFiles\img\500.png" />
+    <Content Include="AdminFiles\img\apple-touch-icon.png" />
+    <Content Include="AdminFiles\img\blog-bg.jpg" />
+    <Content Include="AdminFiles\img\checkbox-gray.png" />
+    <Content Include="AdminFiles\img\favicon.png" />
+    <Content Include="AdminFiles\img\friends\fr-01.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-02.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-03.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-04.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-05.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-06.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-07.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-08.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-09.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-10.jpg" />
+    <Content Include="AdminFiles\img\friends\fr-11.jpg" />
+    <Content Include="AdminFiles\img\instagram.jpg" />
+    <Content Include="AdminFiles\img\login-bg.jpg" />
+    <Content Include="AdminFiles\img\lorde.jpg" />
+    <Content Include="AdminFiles\img\mask.png" />
+    <Content Include="AdminFiles\img\ny.jpg" />
+    <Content Include="AdminFiles\img\portfolio\port01.jpg" />
+    <Content Include="AdminFiles\img\portfolio\port02.jpg" />
+    <Content Include="AdminFiles\img\portfolio\port03.jpg" />
+    <Content Include="AdminFiles\img\portfolio\port04.jpg" />
+    <Content Include="AdminFiles\img\portfolio\port05.jpg" />
+    <Content Include="AdminFiles\img\portfolio\port06.jpg" />
+    <Content Include="AdminFiles\img\product.jpg" />
+    <Content Include="AdminFiles\img\profile-01.jpg" />
+    <Content Include="AdminFiles\img\profile-02.jpg" />
+    <Content Include="AdminFiles\img\radio-gray.png" />
+    <Content Include="AdminFiles\img\ui-danro.jpg" />
+    <Content Include="AdminFiles\img\ui-divya.jpg" />
+    <Content Include="AdminFiles\img\ui-sam.jpg" />
+    <Content Include="AdminFiles\img\ui-sherman.jpg" />
+    <Content Include="AdminFiles\img\ui-zac.jpg" />
+    <Content Include="AdminFiles\img\weather.jpg" />
+    <Content Include="AdminFiles\img\zoom.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\css\demo_page.css" />
+    <Content Include="AdminFiles\lib\advanced-datatable\css\demo_table.css" />
+    <Content Include="AdminFiles\lib\advanced-datatable\css\demo_table_jui.css" />
+    <Content Include="AdminFiles\lib\advanced-datatable\css\DT_bootstrap.css" />
+    <Content Include="AdminFiles\lib\advanced-datatable\css\jquery.dataTables.css" />
+    <Content Include="AdminFiles\lib\advanced-datatable\css\jquery.dataTables_themeroller.css" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\back_disabled.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\back_enabled.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\back_enabled_hover.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\details_close.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\details_open.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\favicon.ico" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\forward_disabled.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\forward_enabled.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\forward_enabled_hover.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\sort_asc.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\sort_asc_disabled.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\sort_both.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\sort_desc.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\sort_desc_disabled.png" />
+    <Content Include="AdminFiles\lib\advanced-datatable\js\DT_bootstrap.js" />
+    <Content Include="AdminFiles\lib\advanced-datatable\js\jquery.dataTables.js" />
+    <Content Include="AdminFiles\lib\advanced-datatable\js\jquery.dataTables.min.js" />
+    <Content Include="AdminFiles\lib\advanced-datatable\js\jquery.js" />
+    <Content Include="AdminFiles\lib\advanced-form-components.js" />
+    <Content Include="AdminFiles\lib\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="AdminFiles\lib\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="AdminFiles\lib\bootstrap-daterangepicker\date.js" />
+    <Content Include="AdminFiles\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="AdminFiles\lib\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="AdminFiles\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="AdminFiles\lib\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="AdminFiles\lib\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="AdminFiles\lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="AdminFiles\lib\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="AdminFiles\lib\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="AdminFiles\lib\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="AdminFiles\lib\bootstrap-switch.js" />
+    <Content Include="AdminFiles\lib\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="AdminFiles\lib\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="AdminFiles\lib\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="AdminFiles\lib\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="AdminFiles\lib\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="AdminFiles\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="AdminFiles\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="AdminFiles\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminFiles\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="AdminFiles\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="AdminFiles\lib\calendar-conf-events.js" />
+    <Content Include="AdminFiles\lib\chart-master\Chart.js" />
+    <Content Include="AdminFiles\lib\chartjs-conf.js" />
+    <Content Include="AdminFiles\lib\ckeditor\ckeditor.js" />
+    <Content Include="AdminFiles\lib\common-scripts.js" />
+    <Content Include="AdminFiles\lib\dropzone\css\dropzone.css" />
+    <Content Include="AdminFiles\lib\dropzone\dropzone.js" />
+    <Content Include="AdminFiles\lib\dropzone\images\spritemap%402x.png" />
+    <Content Include="AdminFiles\lib\dropzone\images\spritemap.png" />
+    <Content Include="AdminFiles\lib\easy-pie-chart.js" />
+    <Content Include="AdminFiles\lib\fancybox\jquery.fancybox.css" />
+    <Content Include="AdminFiles\lib\fancybox\jquery.fancybox.js" />
+    <Content Include="AdminFiles\lib\file-uploader\css\jquery.fileupload-noscript.css" />
+    <Content Include="AdminFiles\lib\file-uploader\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="AdminFiles\lib\file-uploader\css\jquery.fileupload-ui.css" />
+    <Content Include="AdminFiles\lib\file-uploader\css\jquery.fileupload.css" />
+    <Content Include="AdminFiles\lib\file-uploader\img\loading.gif" />
+    <Content Include="AdminFiles\lib\file-uploader\img\progressbar.gif" />
+    <Content Include="AdminFiles\lib\file-uploader\js\cors\jquery.xdr-transport.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload-audio.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload-image.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload-process.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload-ui.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload-validate.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload-video.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.fileupload.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\jquery.iframe-transport.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\main.js" />
+    <Content Include="AdminFiles\lib\file-uploader\js\vendor\jquery.ui.widget.js" />
+    <Content Include="AdminFiles\lib\flotchart-conf.js" />
+    <Content Include="AdminFiles\lib\flot\jquery.flot.crosshair.js" />
+    <Content Include="AdminFiles\lib\flot\jquery.flot.js" />
+    <Content Include="AdminFiles\lib\flot\jquery.flot.pie.js" />
+    <Content Include="AdminFiles\lib\flot\jquery.flot.resize.js" />
+    <Content Include="AdminFiles\lib\flot\jquery.flot.stack.js" />
+    <Content Include="AdminFiles\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="AdminFiles\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="AdminFiles\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminFiles\lib\form-component.js" />
+    <Content Include="AdminFiles\lib\form-validation-script.js" />
+    <Content Include="AdminFiles\lib\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="AdminFiles\lib\fullcalendar\fullcalendar.min.js" />
+    <Content Include="AdminFiles\lib\google-maps\data\points.js" />
+    <Content Include="AdminFiles\lib\google-maps\maplace.js" />
+    <Content Include="AdminFiles\lib\gritter-conf.js" />
+    <Content Include="AdminFiles\lib\gritter\css\jquery.gritter.css" />
+    <Content Include="AdminFiles\lib\gritter\css\jquery.gritter0.css" />
+    <Content Include="AdminFiles\lib\gritter\images\gritter-light.png" />
+    <Content Include="AdminFiles\lib\gritter\images\gritter-long.png" />
+    <Content Include="AdminFiles\lib\gritter\images\gritter.png" />
+    <Content Include="AdminFiles\lib\gritter\images\ie-spacer.gif" />
+    <Content Include="AdminFiles\lib\gritter\js\jquery.gritter.js" />
+    <Content Include="AdminFiles\lib\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="AdminFiles\lib\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="AdminFiles\lib\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="AdminFiles\lib\jquery.backstretch.min.js" />
+    <Content Include="AdminFiles\lib\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="AdminFiles\lib\jquery.nicescroll.js" />
+    <Content Include="AdminFiles\lib\jquery.scrollTo.min.js" />
+    <Content Include="AdminFiles\lib\jquery.sparkline.js" />
+    <Content Include="AdminFiles\lib\jquery.tagsinput.js" />
+    <Content Include="AdminFiles\lib\jquery.ui.touch-punch.min.js" />
+    <Content Include="AdminFiles\lib\jquery\jquery.js" />
+    <Content Include="AdminFiles\lib\jquery\jquery.min.js" />
+    <Content Include="AdminFiles\lib\morris-conf.js" />
+    <Content Include="AdminFiles\lib\morris\morris.min.js" />
+    <Content Include="AdminFiles\lib\php-mail-form\validate.js" />
+    <Content Include="AdminFiles\lib\raphael\raphael.min.js" />
+    <Content Include="AdminFiles\lib\sparkline-chart.js" />
+    <Content Include="AdminFiles\lib\tasks.js" />
+    <Content Include="AdminFiles\lib\xchart\d3.v3.min.js" />
+    <Content Include="AdminFiles\lib\xchart\xcharts.css" />
+    <Content Include="AdminFiles\lib\xchart\xcharts.min.js" />
+    <Content Include="AdminFiles\lib\zabuto_calendar.js" />
+    <Content Include="AdminFiles\Readme.txt" />
+    <Content Include="Files\css\animate.css" />
+    <Content Include="Files\css\bootstrap.min.css" />
+    <Content Include="Files\css\font-awesome.min.css" />
+    <Content Include="Files\css\magnific-popup.css" />
+    <Content Include="Files\css\owl.carousel.css" />
+    <Content Include="Files\css\style.css" />
+    <Content Include="Files\icon-fonts\fontawesome-webfont.svg" />
+    <Content Include="Files\img\about.jpg" />
+    <Content Include="Files\img\author.jpg" />
+    <Content Include="Files\img\bg.jpg" />
+    <Content Include="Files\img\blog\1.jpg" />
+    <Content Include="Files\img\blog\2.jpg" />
+    <Content Include="Files\img\blog\3.jpg" />
+    <Content Include="Files\img\blog\4.jpg" />
+    <Content Include="Files\img\blog\5.jpg" />
+    <Content Include="Files\img\blog\6.jpg" />
+    <Content Include="Files\img\blog\7.jpg" />
+    <Content Include="Files\img\blog\8.jpg" />
+    <Content Include="Files\img\blog\9.jpg" />
+    <Content Include="Files\img\blog\author.jpg" />
+    <Content Include="Files\img\blog\comment\1.jpg" />
+    <Content Include="Files\img\blog\comment\2.jpg" />
+    <Content Include="Files\img\blog\comment\3.jpg" />
+    <Content Include="Files\img\blog\single-blog.jpg" />
+    <Content Include="Files\img\contact.jpg" />
+    <Content Include="Files\img\feature-cate\1.jpg" />
+    <Content Include="Files\img\feature-cate\2.jpg" />
+    <Content Include="Files\img\feature-cate\3.jpg" />
+    <Content Include="Files\img\feature-cate\4.jpg" />
+    <Content Include="Files\img\feature\1.jpg" />
+    <Content Include="Files\img\feature\10.jpg" />
+    <Content Include="Files\img\feature\11.jpg" />
+    <Content Include="Files\img\feature\12.jpg" />
+    <Content Include="Files\img\feature\2.jpg" />
+    <Content Include="Files\img\feature\3.jpg" />
+    <Content Include="Files\img\feature\4.jpg" />
+    <Content Include="Files\img\feature\5.jpg" />
+    <Content Include="Files\img\feature\6.jpg" />
+    <Content Include="Files\img\feature\7.jpg" />
+    <Content Include="Files\img\feature\8.jpg" />
+    <Content Include="Files\img\feature\9.jpg" />
+    <Content Include="Files\img\footer-bg.jpg" />
+    <Content Include="Files\img\gallery\1.jpg" />
+    <Content Include="Files\img\gallery\2.jpg" />
+    <Content Include="Files\img\gallery\3.jpg" />
+    <Content Include="Files\img\gallery\4.jpg" />
+    <Content Include="Files\img\logo.png" />
+    <Content Include="Files\img\map-marker-1.png" />
+    <Content Include="Files\img\map-marker-2.png" />
+    <Content Include="Files\img\page-top-bg.jpg" />
+    <Content Include="Files\img\partner\1.png" />
+    <Content Include="Files\img\partner\2.png" />
+    <Content Include="Files\img\partner\3.png" />
+    <Content Include="Files\img\partner\4.png" />
+    <Content Include="Files\img\partner\5.png" />
+    <Content Include="Files\img\plan-sketch.jpg" />
+    <Content Include="Files\img\propertie\1.jpg" />
+    <Content Include="Files\img\propertie\2.jpg" />
+    <Content Include="Files\img\propertie\3.jpg" />
+    <Content Include="Files\img\propertie\4.jpg" />
+    <Content Include="Files\img\review-bg.jpg" />
+    <Content Include="Files\img\review\1.jpg" />
+    <Content Include="Files\img\service-bg.jpg" />
+    <Content Include="Files\img\service.jpg" />
+    <Content Include="Files\img\single-list-slider\1.jpg" />
+    <Content Include="Files\img\single-list-slider\2.jpg" />
+    <Content Include="Files\img\single-list-slider\3.jpg" />
+    <Content Include="Files\img\single-list-slider\4.jpg" />
+    <Content Include="Files\img\single-list-slider\5.jpg" />
+    <Content Include="Files\img\team\1.jpg" />
+    <Content Include="Files\img\team\2.jpg" />
+    <Content Include="Files\img\team\3.jpg" />
+    <Content Include="Files\img\team\4.jpg" />
+    <Content Include="Files\img\video-btn.png" />
+    <Content Include="Files\img\video.jpg" />
+    <Content Include="Files\js\bootstrap.min.js" />
+    <Content Include="Files\js\jquery-3.2.1.min.js" />
+    <Content Include="Files\js\magnific-popup.min.js" />
+    <Content Include="Files\js\main.js" />
+    <Content Include="Files\js\map-2.js" />
+    <Content Include="Files\js\map.js" />
+    <Content Include="Files\js\masonry.pkgd.min.js" />
+    <Content Include="Files\js\owl.carousel.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="img\about.jpg" />
+    <Content Include="img\author.jpg" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\blog\1.jpg" />
+    <Content Include="img\blog\2.jpg" />
+    <Content Include="img\blog\3.jpg" />
+    <Content Include="img\blog\4.jpg" />
+    <Content Include="img\blog\5.jpg" />
+    <Content Include="img\blog\6.jpg" />
+    <Content Include="img\blog\7.jpg" />
+    <Content Include="img\blog\8.jpg" />
+    <Content Include="img\blog\9.jpg" />
+    <Content Include="img\blog\author.jpg" />
+    <Content Include="img\blog\comment\1.jpg" />
+    <Content Include="img\blog\comment\2.jpg" />
+    <Content Include="img\blog\comment\3.jpg" />
+    <Content Include="img\blog\single-blog.jpg" />
+    <Content Include="img\contact.jpg" />
+    <Content Include="img\feature-cate\1.jpg" />
+    <Content Include="img\feature-cate\2.jpg" />
+    <Content Include="img\feature-cate\3.jpg" />
+    <Content Include="img\feature-cate\4.jpg" />
+    <Content Include="img\feature\1.jpg" />
+    <Content Include="img\feature\10.jpg" />
+    <Content Include="img\feature\11.jpg" />
+    <Content Include="img\feature\12.jpg" />
+    <Content Include="img\feature\2.jpg" />
+    <Content Include="img\feature\3.jpg" />
+    <Content Include="img\feature\4.jpg" />
+    <Content Include="img\feature\5.jpg" />
+    <Content Include="img\feature\6.jpg" />
+    <Content Include="img\feature\7.jpg" />
+    <Content Include="img\feature\8.jpg" />
+    <Content Include="img\feature\9.jpg" />
+    <Content Include="img\footer-bg.jpg" />
+    <Content Include="img\gallery\1.jpg" />
+    <Content Include="img\gallery\2.jpg" />
+    <Content Include="img\gallery\3.jpg" />
+    <Content Include="img\gallery\4.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\map-marker-1.png" />
+    <Content Include="img\map-marker-2.png" />
+    <Content Include="img\page-top-bg.jpg" />
+    <Content Include="img\partner\1.png" />
+    <Content Include="img\partner\2.png" />
+    <Content Include="img\partner\3.png" />
+    <Content Include="img\partner\4.png" />
+    <Content Include="img\partner\5.png" />
+    <Content Include="img\plan-sketch.jpg" />
+    <Content Include="img\propertie\1.jpg" />
+    <Content Include="img\propertie\2.jpg" />
+    <Content Include="img\propertie\3.jpg" />
+    <Content Include="img\propertie\4.jpg" />
+    <Content Include="img\review-bg.jpg" />
+    <Content Include="img\review\1.jpg" />
+    <Content Include="img\service-bg.jpg" />
+    <Content Include="img\service.jpg" />
+    <Content Include="img\single-list-slider\1.jpg" />
+    <Content Include="img\single-list-slider\2.jpg" />
+    <Content Include="img\single-list-slider\3.jpg" />
+    <Content Include="img\single-list-slider\4.jpg" />
+    <Content Include="img\single-list-slider\5.jpg" />
+    <Content Include="img\team\1.jpg" />
+    <Content Include="img\team\2.jpg" />
+    <Content Include="img\team\3.jpg" />
+    <Content Include="img\team\4.jpg" />
+    <Content Include="img\video-btn.png" />
+    <Content Include="img\video.jpg" />
+    <Content Include="Kayıt\css\main.css" />
+    <Content Include="Kayıt\css\util.css" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Kayıt\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Kayıt\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Kayıt\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Kayıt\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Kayıt\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Kayıt\images\bg-01.jpg" />
+    <Content Include="Kayıt\images\icons\favicon.ico" />
+    <Content Include="Kayıt\images\icons\map-marker.png" />
+    <Content Include="Kayıt\js\main.js" />
+    <Content Include="Kayıt\js\map-custom.js" />
+    <Content Include="Kayıt\vendor\animate\animate.css" />
+    <Content Include="Kayıt\vendor\animsition\css\animsition.css" />
+    <Content Include="Kayıt\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Kayıt\vendor\animsition\js\animsition.js" />
+    <Content Include="Kayıt\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Kayıt\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Kayıt\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Kayıt\vendor\bootstrap\js\popper.js" />
+    <Content Include="Kayıt\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Kayıt\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Kayıt\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Kayıt\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Kayıt\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Kayıt\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Kayıt\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Kayıt\vendor\daterangepicker\moment.js" />
+    <Content Include="Kayıt\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Kayıt\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Kayıt\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Kayıt\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Kayıt\vendor\select2\select2.css" />
+    <Content Include="Kayıt\vendor\select2\select2.js" />
+    <Content Include="Kayıt\vendor\select2\select2.min.css" />
+    <Content Include="Kayıt\vendor\select2\select2.min.js" />
+    <Content Include="Login\css\main.css" />
+    <Content Include="Login\css\util.css" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Login\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Login\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Login\fonts\ubuntu\UFL.txt" />
+    <Content Include="Login\images\bg-01.jpg" />
+    <Content Include="Login\images\icons\favicon.ico" />
+    <Content Include="Login\js\main.js" />
+    <Content Include="Login\vendor\animate\animate.css" />
+    <Content Include="Login\vendor\animsition\css\animsition.css" />
+    <Content Include="Login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Login\vendor\animsition\js\animsition.js" />
+    <Content Include="Login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Login\vendor\daterangepicker\moment.js" />
+    <Content Include="Login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Login\vendor\select2\select2.css" />
+    <Content Include="Login\vendor\select2\select2.js" />
+    <Content Include="Login\vendor\select2\select2.min.css" />
+    <Content Include="Login\vendor\select2\select2.min.js" />
+    <Content Include="script_files\bootstrap.min.js" />
+    <Content Include="script_files\jquery-3.2.1.min.js" />
+    <Content Include="script_files\magnific-popup.min.js" />
+    <Content Include="script_files\main.js" />
+    <Content Include="script_files\map-2.js" />
+    <Content Include="script_files\map.js" />
+    <Content Include="script_files\masonry.pkgd.min.js" />
+    <Content Include="script_files\owl.carousel.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Sınıflar\Context.cs" />
+    <Compile Include="Models\Sınıflar\Kullanici.cs" />
+    <Compile Include="Models\Sınıflar\Portfolio.cs" />
+    <Compile Include="Models\Sınıflar\ResimPath.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Files\fonts\Futura.woff" />
+    <Content Include="Files\fonts\Futura1.woff" />
+    <Content Include="Files\fonts\WEB BASED RESULT PUBLICATION SYSTEM FOR EDUCATION BOARDS.pdf" />
+    <Content Include="Files\icon-fonts\fontawesome-webfont.eot" />
+    <Content Include="Files\icon-fonts\fontawesome-webfont.woff" />
+    <Content Include="Files\icon-fonts\fontawesome-webfont.woff2" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Kayıt\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Kayıt\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Kayıt\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Kayıt\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Kayıt\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Kayıt\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Kayıt\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Kayıt\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Kayıt\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Kayıt\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Kayıt\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Login\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Login\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Login\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-BoldItalic.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-Italic.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-LightItalic.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-MediumItalic.ttf" />
+    <Content Include="Login\fonts\ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="AdminFiles\lib\advanced-datatable\images\Sorting icons.psd" />
+    <Content Include="AdminFiles\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminFiles\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminFiles\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminFiles\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminFiles\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminFiles\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminFiles\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminFiles\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminFiles\lib\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="packages.config" />
+    <Content Include="Views\shared\_Layout.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\Sunulanİlan.cshtml" />
+    <Content Include="Views\Default\Blog.cshtml" />
+    <Content Include="Views\Default\İletisim.cshtml" />
+    <Content Include="Views\Default\About.cshtml" />
+    <Content Include="Views\Default\EvBilgisi.cshtml" />
+    <Content Include="Views\shared\_LayoKayıtSayfası.cshtml" />
+    <Content Include="Views\Default\KayıtSayfası.cshtml" />
+    <Content Include="Views\shared\_Layologin.cshtml" />
+    <Content Include="Views\Default\Login.cshtml" />
+    <Content Include="Views\adminshared\_LayoAdmin.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Admin\AdminUIElements.cshtml" />
+    <Content Include="Views\Admin\ElGeneral.cshtml" />
+    <Content Include="Views\Admin\Buttons.cshtml" />
+    <Content Include="Views\Admin\Panels.cshtml" />
+    <Content Include="Views\Admin\Grids.cshtml" />
+    <Content Include="Views\Admin\Awesome.cshtml" />
+    <Content Include="Views\Admin\Calendar.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Admin\Gallery.cshtml" />
+    <Content Include="Views\Admin\Compolist.cshtml" />
+    <Content Include="Views\Admin\Dropzone.cshtml" />
+    <Content Include="Views\Admin\InlineEditor.cshtml" />
+    <Content Include="Views\Default\Sayfalar.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Files\img\review\New folder\" />
+    <Folder Include="image\" />
+    <Folder Include="img\review\New folder\" />
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51759</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44327/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

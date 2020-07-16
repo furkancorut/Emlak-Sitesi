@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Dropzone";
+    Layout = "~/Views/adminshared/_LayoAdmin.cshtml";
+}
+
+    <section id="main-content">
+        <section class="wrapper site-min-height">
+            <h3><i class="fa fa-angle-right"></i> Dropzone File Upload</h3>
+            <div class="row mt">
+                <div class="white-panel mt">
+                    <div class="panel-body">
+
+                        @* php uzantılı dosya acılmıyor *@
+                        <form action="assets/dropzone/upload.php" class="dropzone" id="my-awesome-dropzone"></form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- /wrapper -->
+    </section>

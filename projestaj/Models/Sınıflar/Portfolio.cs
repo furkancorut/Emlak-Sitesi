@@ -11,10 +11,13 @@ namespace projestaj.Models.Sınıflar
         [Key]
         public int IDport { get; set; }
 
-        public string Baslik { get; set;}
-        public string Detay1 { get; set; }
-        public string Detay2 { get; set; }
-        public string Detay3 { get; set; }
+        public string Baslik { get; set; }
+        public string Metrekare { get; set; }
+        public string OdaSayısı { get; set; }
+        public string Wc { get; set; }
+        public string Detay4 {get;set;}
+
+        public string Açiklama { get; set; }
 
         public ResimPath ResimPath { get; set; }
 

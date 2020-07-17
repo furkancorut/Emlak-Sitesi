@@ -66,9 +66,9 @@
                         <div class="col-md-4 col-sm-6">
                             @foreach (var x in Model)
                             {
-                                <p><i class="fa fa-th-large"></i>@x.Detay1</p>
+                                <p><i class="fa fa-th-large"></i>@x.Metrekare</p>
 
-                                <p><i class="fa fa-bed"></i> @x.Detay2</p>
+                                <p><i class="fa fa-bed"></i> @x.OdaSayısı</p>
 
                                 <p><i class="fa fa-user"></i> Gina Wesley</p>
                             }
@@ -81,15 +81,18 @@
                         <div class="col-md-4">
                             @foreach (var x in Model)
                             {
-                                <p><i class="fa fa-bath"></i>@x.Detay3</p>
-                            }
-                            <p><i class="fa fa-trophy"></i> 5 years age</p>
+                                <p><i class="fa fa-bath"></i>@x.Wc</p>
 
+                            <p><i class="fa fa-trophy"></i>@x.Detay4</p>
+                            }
                         </div>
                     </div>
                     <h3 class="sl-sp-title">Description</h3>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus egestas fermentum ornareste. Donec index lorem. Vestibulum  aliquet odio, eget tempor libero. Cras congue cursus tincidunt. Nullam venenatis dui id orci egestas tincidunt id elit. Nullam ut vuputate justo. Integer lacnia pharetra pretium. Casan ante ipsum primis in faucibus orci luctus et ultrice.</p>
+                        @foreach (var x in Model)
+                        {
+                        <p>@x.Açiklama </p> 
+                        }
                     </div>
                     <h3 class="sl-sp-title">Property Details</h3>
                     <div class="row property-details-list">
